@@ -34,9 +34,13 @@ public class LoginAuthenticator extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		beanDB db = new beanDB();
-		HttpSession session = request.getSession();
+		
+		HttpSession session = request.getSession();		
+		
 		String usuario=request.getParameter("usuario");
+		
 		String pass=request.getParameter("pass");
+		
 		if (usuario == null) usuario="";
 			if (pass == null) pass="";
 				boolean ok=false;
