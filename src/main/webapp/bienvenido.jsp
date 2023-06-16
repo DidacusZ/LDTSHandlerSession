@@ -9,9 +9,19 @@
 
 String usuario="";
 try {  //AQUI VA EL CONTROL DE SESION
-	usuario=session.getAttribute("attributo2").toString();
-	String acceso = session.getAttribute("attributo1").toString();
- 	if (!acceso.equals("1")) response.sendRedirect("cerrarsesion.jsp");
+	
+	try{
+		usuario=session.getAttribute("attributo2").toString();
+		String acceso = session.getAttribute("attributo1").toString();
+	 	if (!acceso.equals("1")) response.sendRedirect("cerrarsesion.jsp");
+	 	
+	}catch(Exception ee){	
+
+			usuario=session.getAttribute("usuario").toString();
+			String acceso = session.getAttribute("nivel").toString();
+		 	if (!acceso.equals("1") && !acceso.equals("2")) response.sendRedirect("cerrarsesion.jsp");
+	}	 	
+ 	
 } catch (Exception e) {
 	response.sendRedirect("cerrarsesion.jsp");
 }

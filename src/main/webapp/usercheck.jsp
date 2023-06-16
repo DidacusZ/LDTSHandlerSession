@@ -17,6 +17,7 @@ try {
          resultado = "<div><h1 style='color: white; font-weight: bold;'>Inicio de sesión correcto</h1></div>";
      };
 } catch (Exception e) {
+	e.printStackTrace();
     resultado = "<div><h1 style='color: darkred; font-weight: bold;'>No ha iniciado ninguna sesión</h1></div>";
 }
 %>
